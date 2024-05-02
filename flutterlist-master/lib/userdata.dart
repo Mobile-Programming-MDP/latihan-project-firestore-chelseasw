@@ -1,7 +1,7 @@
-class UserData{
+class UserData {
   String nama;
-  int umur;
+  int npm;
   String email;
 
-  UserData(this.nama, this.umur, this.email);
+  UserData(this.nama, this.npm, this.email);
 }

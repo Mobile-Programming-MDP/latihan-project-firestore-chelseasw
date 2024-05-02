@@ -1,12 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutterlist/userdata.dart';
 import 'package:flutter_gravatar/flutter_gravatar.dart';
 import 'package:flutter_gravatar/utils.dart';
 
-class UserItem extends StatefulWidget{
-
-  UserData userData ;
+class UserItem extends StatefulWidget {
+  UserData userData;
   UserItem(this.userData);
 
   @override
@@ -14,8 +12,7 @@ class UserItem extends StatefulWidget{
 }
 
 class _UserItemState extends State<UserItem> {
-
-  Gravatar? gravatar ;
+  Gravatar? gravatar;
 
   @override
   void initState() {
@@ -26,30 +23,37 @@ class _UserItemState extends State<UserItem> {
   @override
   Widget build(BuildContext context) {
     gravatar = Gravatar(widget.userData.email);
-    return  Container(
+    return Container(
       padding: EdgeInsets.all(5),
-      child: Row(  
-          children: [
-            CircleAvatar(
-              // backgroundColor: Colors.lightBlue,
-              // child: Text(
-              //   userData.nama[0].toUpperCase(), 
-              //   style: TextStyle(color: Colors.white)
-              // ),
-              backgroundImage: NetworkImage(gravatar!.imageUrl()),
+      child: Row(
+        children: [
+          CircleAvatar(
+            // backgroundColor: Colors.lightBlue,
+            // child: Text(
+            //   userData.nama[0].toUpperCase(),
+            //   style: TextStyle(color: Colors.white)
+            // ),
+            backgroundImage: NetworkImage(gravatar!.imageUrl()),
+          ),
+          Container(
+            padding: EdgeInsets.all(5),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.userData.nama,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Text("NPM : " +
+                    widget.userData.npm.toString() +
+                    " " +
+                    "Email : " +
+                    widget.userData.email),
+              ],
             ),
-            Container(
-              padding: EdgeInsets.all(5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(widget.userData.nama, style: TextStyle(fontWeight: FontWeight.bold),),
-                  Text("Umur : " + widget.userData.umur.toString() + " " + "Email : " + widget.userData.email),
-                ],
-              ),
-            )
-          ],
-        ),
+          )
+        ],
+      ),
     );
   }
 }
