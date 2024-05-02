@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "7029825992",
+    "project_id": "flutterfirestore-27000",
+    "storage_bucket": "flutterfirestore-27000.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7029825992:android:e6401914cc1f61db53e0fd",
+        "android_client_info": {
+          "package_name": "com.example.flutterlist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuG3BVtDBPJxsZ9ETrzYFmk6--qc7CIfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
