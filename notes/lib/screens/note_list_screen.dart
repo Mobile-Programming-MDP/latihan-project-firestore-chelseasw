@@ -36,7 +36,6 @@ class _NoteListScreenState extends State<NoteListScreen> {
 
 class NoteList extends StatelessWidget {
   const NoteList({super.key});
-
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(

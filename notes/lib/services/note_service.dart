@@ -31,11 +31,14 @@ class NoteService {
       return null;
     }
   }
+
   static Future<void> addNote(Note note) async {
     Map<String, dynamic> newNote = {
       'title': note.title,
       'description': note.description,
       'image_url': note.imageUrl,
+      'lat': note.lat,
+      'lng': note.lng,
       'created_at': FieldValue.serverTimestamp(),
       'updated_at': FieldValue.serverTimestamp(),
     };
@@ -47,6 +50,8 @@ class NoteService {
       'title': note.title,
       'description': note.description,
       'image_url': note.imageUrl,
+      'lat': note.lat,
+      'lng': note.lng,
       'created_at': note.createdAt,
       'updated_at': FieldValue.serverTimestamp(),
     };
@@ -71,6 +76,8 @@ class NoteService {
           title: data['title'],
           description: data['description'],
           imageUrl: data['image_url'],
+          lat: data['lat'],
+          lng: data['lng'],
           createdAt: data['created_at'] != null
               ? data['created_at'] as Timestamp
               : null,
